@@ -1,19 +1,16 @@
 const { v4 } = require('uuid');
-// const operations = require('./index');
-const getAllNotes = require('./getAllNotes');
-const getCurrentDate = require('./getCurrentDate');
-const updateNotes = require('./updateNotes');
+const operations = require('../helpers');
 
 const addNote = async (body) => {
-  const notes = await getAllNotes();
+  const notes = await operations.getAllNotes();
   const newNote = {
     id: v4(),
-    create: getCurrentDate(),
+    create: operations.getCurrentDate(),
     active: true,
     ...body,
   };
   const updatedNotes = [...notes, newNote];
-  await updateNotes(updatedNotes);
+  await operations.updateNotes(updatedNotes);
   return newNote;
 };
 

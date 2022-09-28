@@ -6,6 +6,8 @@ const router = express.Router();
 
 router.get('/', controllers.getAll);
 
+router.get('/stats', controllers.getStats);
+
 router.get('/:id', controllers.getById);
 
 router.post('/', controllers.add);

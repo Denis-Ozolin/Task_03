@@ -1,13 +1,14 @@
-const operations = require('./');
+const getAllNotes = require('./getAllNotes');
+const updateNotes = require('./updateNotes');
 
 const removeNote = async (noteId) => {
-  const notes = await operations.getAllNotes();
+  const notes = await getAllNotes();
   const idx = notes.findIndex(({ id }) => String(id) === String(noteId));
   if (idx === -1) {
     return null;
   }
   const updatedNotes = notes.filter((_, index) => index !== idx);
-  await operations.updateNotes(updatedNotes);
+  await updateNotes(updatedNotes);
   return notes[idx];
 };
 
