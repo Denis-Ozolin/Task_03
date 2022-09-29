@@ -1,0 +1,1 @@
+export const baseCategories = ["Task", "Idea", "Random Thought"];

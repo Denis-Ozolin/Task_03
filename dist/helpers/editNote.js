@@ -50,13 +50,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var getAllNotes_1 = __importDefault(require("./getAllNotes"));
-var updateNotes_1 = __importDefault(require("./updateNotes"));
+var _1 = __importDefault(require("."));
 var editNote = function (noteId, body) { return __awaiter(void 0, void 0, void 0, function () {
     var notes, idx;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, getAllNotes_1["default"])()];
+            case 0: return [4 /*yield*/, _1["default"].getAllNotes()];
             case 1:
                 notes = _a.sent();
                 idx = notes.findIndex(function (_a) {
@@ -67,7 +66,7 @@ var editNote = function (noteId, body) { return __awaiter(void 0, void 0, void 0
                     return [2 /*return*/, null];
                 }
                 notes[idx] = __assign(__assign({}, notes[idx]), body);
-                return [4 /*yield*/, (0, updateNotes_1["default"])(notes)];
+                return [4 /*yield*/, _1["default"].updateNotes(notes)];
             case 2:
                 _a.sent();
                 return [2 /*return*/, notes[idx]];

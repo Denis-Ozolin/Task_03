@@ -45,10 +45,10 @@ var getAllNotes = function () { return __awaiter(void 0, void 0, void 0, functio
     var data, notes;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, JSON.stringify(promises_1["default"].readFile(repositories_1["default"]))];
+            case 0: return [4 /*yield*/, promises_1["default"].readFile(repositories_1["default"])];
             case 1:
                 data = _a.sent();
-                notes = JSON.parse(data);
+                notes = JSON.parse(String(data));
                 return [2 /*return*/, notes];
         }
     });

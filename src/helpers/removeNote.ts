@@ -1,6 +1,6 @@
 import operations from '.';
 
-const removeNote = async (noteId) => {
+const removeNote = async (noteId: string | number) => {
   const notes = await operations.getAllNotes();
   const idx = notes.findIndex(({ id }) => String(id) === String(noteId));
   if (idx === -1) {

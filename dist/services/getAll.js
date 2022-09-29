@@ -41,20 +41,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var helpers_1 = __importDefault(require("../helpers"));
 var getAll = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var notes, error_1;
+    var result, error, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, helpers_1["default"].getAllNotes()];
             case 1:
-                notes = _a.sent();
-                console.log(notes);
+                result = _a.sent();
+                if (!result || !result.length) {
+                    error = new Error('List of notes is empty');
+                    error.status = 404;
+                    throw error;
+                }
                 res.json({
                     status: 'success',
                     code: 200,
                     data: {
-                        result: notes
+                        result: result
                     }
                 });
                 return [3 /*break*/, 3];

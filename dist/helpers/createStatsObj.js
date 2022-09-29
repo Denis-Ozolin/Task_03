@@ -59,7 +59,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var getNoteAmountOnCategory_1 = __importDefault(require("./getNoteAmountOnCategory"));
+var _1 = __importDefault(require("."));
 var createStatsObj = function (categories, notes) { return __awaiter(void 0, void 0, void 0, function () {
     var result;
     return __generator(this, function (_a) {
@@ -67,7 +67,7 @@ var createStatsObj = function (categories, notes) { return __awaiter(void 0, voi
             case 0:
                 result = [];
                 return [4 /*yield*/, categories.forEach(function (category) {
-                        var data = (0, getNoteAmountOnCategory_1["default"])(category, notes);
+                        var data = _1["default"].getNoteAmountOnCategory(category, notes);
                         var categoryStat = {
                             name: category,
                             amount: __assign({}, data)

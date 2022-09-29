@@ -1,6 +1,7 @@
 import operations from '.';
+import { INote } from '../repositories/types';
 
-const createStatsObj = async (categories, notes) => {
+const createStatsObj = async (categories: string[], notes: INote[]) => {
   let result = [];
   await categories.forEach((category) => {
     const data = operations.getNoteAmountOnCategory(category, notes);

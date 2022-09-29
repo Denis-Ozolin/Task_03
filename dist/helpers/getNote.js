@@ -39,12 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var helpers_1 = __importDefault(require("../helpers"));
+var _1 = __importDefault(require("."));
 var getNote = function (noteId) { return __awaiter(void 0, void 0, void 0, function () {
     var notes, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, helpers_1["default"].getAllNotes()];
+            case 0: return [4 /*yield*/, _1["default"].getAllNotes()];
             case 1:
                 notes = _a.sent();
                 result = notes.find(function (_a) {

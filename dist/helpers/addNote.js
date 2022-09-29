@@ -60,23 +60,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 exports.__esModule = true;
 var uuid_1 = require("uuid");
-var getAllNotes_1 = __importDefault(require("./getAllNotes"));
-var getCurrentDate_1 = __importDefault(require("./getCurrentDate"));
-var updateNotes_1 = __importDefault(require("./updateNotes"));
+var _1 = __importDefault(require("."));
 var addNote = function (body) { return __awaiter(void 0, void 0, void 0, function () {
     var notes, newNote, updatedNotes;
     var _a;
     return __generator(this, function (_b) {
         switch (_b.label) {
-            case 0: return [4 /*yield*/, (0, getAllNotes_1["default"])()];
+            case 0:
+                if (!body.category || !body.content) {
+                    return [2 /*return*/, null];
+                }
+                return [4 /*yield*/, _1["default"].getAllNotes()];
             case 1:
                 notes = _b.sent();
                 _a = { id: (0, uuid_1.v4)() };
-                return [4 /*yield*/, (0, getCurrentDate_1["default"])()];
+                return [4 /*yield*/, _1["default"].getCurrentDate()];
             case 2:
                 newNote = __assign.apply(void 0, [(_a.create = _b.sent(), _a.active = true, _a), body]);
                 updatedNotes = __spreadArray(__spreadArray([], notes, true), [newNote], false);
-                return [4 /*yield*/, (0, updateNotes_1["default"])(updatedNotes)];
+                return [4 /*yield*/, _1["default"].updateNotes(updatedNotes)];
             case 3:
                 _b.sent();
                 return [2 /*return*/, newNote];

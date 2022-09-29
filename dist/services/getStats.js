@@ -41,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 exports.__esModule = true;
 var helpers_1 = __importDefault(require("../helpers"));
 var getStats = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var result, error_1;
+    var result, error, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -49,6 +49,11 @@ var getStats = function (req, res, next) { return __awaiter(void 0, void 0, void
                 return [4 /*yield*/, helpers_1["default"].getNotesStats()];
             case 1:
                 result = _a.sent();
+                if (!result || !result.length) {
+                    error = new Error('List of notes is empty');
+                    error.status = 404;
+                    throw error;
+                }
                 res.status(200).json({
                     status: 'success',
                     code: 200,

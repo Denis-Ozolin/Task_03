@@ -9,6 +9,7 @@ import getCategoryList from './getCategoryList';
 import createStatsObj from './createStatsObj';
 import getNoteAmountOnCategory from './getNoteAmountOnCategory';
 import getNotesStats from './getNotesStats';
+import checkData from './checkData';
 
 const operations = {
   addNote,
@@ -21,7 +22,8 @@ const operations = {
   getCategoryList,
   createStatsObj,
   getNoteAmountOnCategory,
-  getNotesStats
+  getNotesStats,
+  checkData
 }
 
 export default operations;

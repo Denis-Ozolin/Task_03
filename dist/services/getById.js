@@ -52,7 +52,7 @@ var getById = function (req, res, next) { return __awaiter(void 0, void 0, void 
                 result = _a.sent();
                 if (!result) {
                     error = new Error("Note with id ".concat(id, " not found"));
-                    // error.status = 404;
+                    error.status = 404;
                     throw error;
                 }
                 res.status(200).json({

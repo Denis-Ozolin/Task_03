@@ -14,6 +14,7 @@ var getCategoryList_1 = __importDefault(require("./getCategoryList"));
 var createStatsObj_1 = __importDefault(require("./createStatsObj"));
 var getNoteAmountOnCategory_1 = __importDefault(require("./getNoteAmountOnCategory"));
 var getNotesStats_1 = __importDefault(require("./getNotesStats"));
+var checkData_1 = __importDefault(require("./checkData"));
 var operations = {
     addNote: addNote_1["default"],
     editNote: editNote_1["default"],
@@ -25,6 +26,7 @@ var operations = {
     getCategoryList: getCategoryList_1["default"],
     createStatsObj: createStatsObj_1["default"],
     getNoteAmountOnCategory: getNoteAmountOnCategory_1["default"],
-    getNotesStats: getNotesStats_1["default"]
+    getNotesStats: getNotesStats_1["default"],
+    checkData: checkData_1["default"]
 };
 exports["default"] = operations;

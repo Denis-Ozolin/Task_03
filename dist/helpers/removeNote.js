@@ -39,12 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var helpers_1 = __importDefault(require("../helpers"));
+var _1 = __importDefault(require("."));
 var removeNote = function (noteId) { return __awaiter(void 0, void 0, void 0, function () {
     var notes, idx, updatedNotes;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, helpers_1["default"].getAllNotes()];
+            case 0: return [4 /*yield*/, _1["default"].getAllNotes()];
             case 1:
                 notes = _a.sent();
                 idx = notes.findIndex(function (_a) {
@@ -55,7 +55,7 @@ var removeNote = function (noteId) { return __awaiter(void 0, void 0, void 0, fu
                     return [2 /*return*/, null];
                 }
                 updatedNotes = notes.filter(function (_, index) { return index !== idx; });
-                return [4 /*yield*/, helpers_1["default"].updateNotes(updatedNotes)];
+                return [4 /*yield*/, _1["default"].updateNotes(updatedNotes)];
             case 2:
                 _a.sent();
                 return [2 /*return*/, notes[idx]];

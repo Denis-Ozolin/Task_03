@@ -39,16 +39,38 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
+var joi_1 = __importDefault(require("joi"));
 var helpers_1 = __importDefault(require("../helpers"));
+var noteSchema = joi_1["default"].object({
+    category: joi_1["default"].string().required(),
+    content: joi_1["default"].string().required()
+});
 var add = function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
-    var result, error_1;
+    var error, error_2, incorrectData, error_3, result, error_4, error_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
+                error = noteSchema.validate(req.body).error;
+                if (error) {
+                    error_2 = new Error("Incorrect data");
+                    error_2.status = 404;
+                    throw error_2;
+                }
+                incorrectData = helpers_1["default"].checkData(req.body);
+                if (incorrectData) {
+                    error_3 = new Error(incorrectData);
+                    error_3.status = 404;
+                    throw error_3;
+                }
                 return [4 /*yield*/, helpers_1["default"].addNote(req.body)];
             case 1:
                 result = _a.sent();
+                if (!result) {
+                    error_4 = new Error('Incorrect data');
+                    error_4.status = 404;
+                    throw error_4;
+                }
                 res.status(201).json({
                     status: 'success',
                     code: 201,

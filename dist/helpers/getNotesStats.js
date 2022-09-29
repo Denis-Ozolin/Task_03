@@ -39,18 +39,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-var helpers_1 = __importDefault(require("../helpers"));
+var _1 = __importDefault(require("."));
 var getNotesStats = function () { return __awaiter(void 0, void 0, void 0, function () {
     var notes, categories, result;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, helpers_1["default"].getAllNotes()];
+            case 0: return [4 /*yield*/, _1["default"].getAllNotes()];
             case 1:
                 notes = _a.sent();
-                return [4 /*yield*/, helpers_1["default"].getCategoryList(notes)];
+                return [4 /*yield*/, _1["default"].getCategoryList(notes)];
             case 2:
                 categories = _a.sent();
-                return [4 /*yield*/, helpers_1["default"].createStatsObj(categories, notes)];
+                return [4 /*yield*/, _1["default"].createStatsObj(categories, notes)];
             case 3:
                 result = _a.sent();
                 if (!result) {
