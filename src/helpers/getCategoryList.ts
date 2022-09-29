@@ -9,4 +9,4 @@ const getCategoryList = (list) => {
   return categoryList;
 };
 
-module.exports = getCategoryList;
+export default getCategoryList;

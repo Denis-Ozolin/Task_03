@@ -1,7 +1,7 @@
-const getAllNotes = require('./getAllNotes');
+import operations from '.';
 
 const getNote = async (noteId) => {
-  const notes = await getAllNotes();
+  const notes = await operations.getAllNotes();
   const result = notes.find(({ id }) => String(id) === String(noteId));
   if (!result) {
     return null;
@@ -9,4 +9,4 @@ const getNote = async (noteId) => {
   return result;
 };
 
-module.exports = getNote;
+export default getNote;

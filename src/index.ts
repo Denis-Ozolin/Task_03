@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 
-const notesRouter = require('./routes');
+import notesRouter from './routes';
 
 const app = express();
 const port = 3000;
@@ -8,10 +8,10 @@ const port = 3000;
 app.use(express.json());
 
 app.use('/notes', notesRouter);
-app.use((req: any, res: { status: (arg0: number) => { (): any; new(): any; json: { (arg0: { message: string; }): void; new(): any; }; }; }) => {
+app.use((req, res) => {
   res.status(404).json({ message: 'Not Found' });
 });
-app.use((err: { status?: 500; message?: "Server error"; }, req: any, res: { status: (arg0: any) => { (): any; new(): any; json: { (arg0: any): void; new(): any; }; }; }, next: any) => {
+app.use((err, req, res, next) => {
   const { status = 500, message = 'Server error' } = err;
   res.status(status).json(message);
 });

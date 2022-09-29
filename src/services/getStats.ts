@@ -1,4 +1,4 @@
-const operations = require('../helpers');
+import operations from '../helpers';
 
 const getStats = async (req, res, next) => {
   try {
@@ -15,4 +15,4 @@ const getStats = async (req, res, next) => {
   }
 };
 
-module.exports = getStats;
+export default getStats;

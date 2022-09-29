@@ -9,4 +9,4 @@ const getNoteAmountOnCategory = (category, notes) => {
   };
 };
 
-module.exports = getNoteAmountOnCategory;
+export default getNoteAmountOnCategory;

@@ -1,12 +1,12 @@
-const operations = require('../helpers');
+import operations from '../helpers';
 
-const removeById = async (req, res, next) => {
+const editById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await operations.removeNote(id);
+    const result = await operations.editNote(id, req.body);
     if (!result) {
       const error = new Error(`Note with id ${id} not found`);
-      error.status = 404;
+      res.status(404);
       throw error;
     }
     res.status(200).json({
@@ -21,4 +21,4 @@ const removeById = async (req, res, next) => {
   }
 };
 
-module.exports = removeById;
+export default editById;

@@ -1,8 +1,9 @@
-const operations = require('../helpers');
+import operations from '../helpers';
 
 const getAll = async (req, res, next) => {
   try {
     const notes = await operations.getAllNotes();
+    
     res.json({
       status: 'success',
       code: 200,
@@ -15,4 +16,4 @@ const getAll = async (req, res, next) => {
   }
 };
 
-module.exports = getAll;
+export default getAll;

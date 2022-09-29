@@ -1,9 +1,9 @@
-const getNoteAmountOnCategory = require('./getNoteAmountOnCategory');
+import operations from '.';
 
 const createStatsObj = async (categories, notes) => {
   let result = [];
   await categories.forEach((category) => {
-    const data = getNoteAmountOnCategory(category, notes);
+    const data = operations.getNoteAmountOnCategory(category, notes);
     const categoryStat = {
       name: category,
       amount: { ...data },
@@ -15,4 +15,4 @@ const createStatsObj = async (categories, notes) => {
   return result;
 };
 
-module.exports = createStatsObj;
+export default createStatsObj;

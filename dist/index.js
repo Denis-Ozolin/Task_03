@@ -1,9 +1,14 @@
-var express = require('express');
-var notesRouter = require('./routes');
-var app = express();
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+exports.__esModule = true;
+var express_1 = __importDefault(require("express"));
+var routes_1 = __importDefault(require("./routes"));
+var app = (0, express_1["default"])();
 var port = 3000;
-app.use(express.json());
-app.use('/notes', notesRouter);
+app.use(express_1["default"].json());
+app.use('/notes', routes_1["default"]);
 app.use(function (req, res) {
     res.status(404).json({ message: 'Not Found' });
 });

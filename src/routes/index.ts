@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 
-const controllers = require('../services');
+import controllers from '../services';
 
 const router = express.Router();
 
@@ -16,4 +16,4 @@ router.patch('/:id', controllers.editById);
 
 router.delete('/:id', controllers.removeById);
 
-module.exports = router;
+export default router;

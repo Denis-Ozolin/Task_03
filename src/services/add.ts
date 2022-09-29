@@ -1,4 +1,4 @@
-const operations = require('../helpers');
+import operations from '../helpers';
 
 const add = async (req, res, next) => {
   try {
@@ -15,4 +15,4 @@ const add = async (req, res, next) => {
   }
 };
 
-module.exports = add;
+export default add;
