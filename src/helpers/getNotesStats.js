@@ -7,8 +7,6 @@ const getNotesStats = async () => {
   const categories = await getCategoryList(notes);
   const result = await createStatsObj(categories, notes);
 
-  console.log(result);
-
   if (!result) {
     return null;
   }

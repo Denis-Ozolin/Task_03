@@ -1,8 +1,8 @@
 const getNoteAmountOnCategory = require('./getNoteAmountOnCategory');
 
-const createStatsObj = (categories, notes) => {
+const createStatsObj = async (categories, notes) => {
   let result = [];
-  categories.forEach((category) => {
+  await categories.forEach((category) => {
     const data = getNoteAmountOnCategory(category, notes);
     const categoryStat = {
       name: category,

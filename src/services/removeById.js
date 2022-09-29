@@ -9,7 +9,13 @@ const removeById = async (req, res, next) => {
       error.status = 404;
       throw error;
     }
-    res.status(204).json();
+    res.status(200).json({
+      status: 'success',
+      code: 200,
+      data: {
+        result,
+      },
+    });
   } catch (error) {
     next(error);
   }
